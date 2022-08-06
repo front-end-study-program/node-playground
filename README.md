@@ -18,3 +18,10 @@ node js 相关知识练习操场
    ```js
    app.METHOD(PATH, HANDLER)
    ```
+
+3. static-files
+   > 为应用程序指定如图像、css文件之类的静态资源目录
+
+   ```js
+   express.static(root, [options])
+   ```
