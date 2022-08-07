@@ -28,7 +28,8 @@ node js 相关知识练习操场
    ```
 
 4. middleware
-   > 中间件函数能够访问请求对象 (req)、响应对象 (res) 以及应用程序的请求/响应循环中的下一个中间件函数 (next)。
+   > 中间件函数能够访问请求对象 (req)、响应对象 (res) 以及应用程序的请求/响应循环中的下一个中间件函数 (next)。<br />
+   > 中间件分为：应用层中间件、路由层中间件、错误处理中间件、内置中间件、第三方中间件
 
    中间件函数可以执行以下任务:
    - 执行任何代码
@@ -53,3 +54,30 @@ node js 相关知识练习操场
 
    app.listen(3000);
     ```
+
+5. template engines
+    > 模板引擎使您能够在应用程序中使用静态模板文件。在运行时，模板引擎将模板文件中的变量替换为实际值，并将模板转换为发送给客户端的 HTML 文件。这种方法使设计 HTML 页面变得更加容易。
+
+   ```bash
+   npm install pug --save
+   ```
+
+   ```js
+   const express = require('express')
+   const app = express()
+   app.set('views', 'views')
+   app.set('view engine', 'pug')
+   app.get('/', (req, res) => {
+      res.render('index', { title: 'Hey', message: 'Hello there!' })
+   })
+   ```
+
+   ```pug
+   // index.pug
+   html
+
+   head
+      title= title
+   body
+      h1= message
+   ```
