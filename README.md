@@ -100,3 +100,16 @@ node js 相关知识练习操场
    ```js
    set DEBUG=express:* & node app.js
    ```
+
+8. files upload
+   > 在 express 中上传单个或者多个文件，并保存在服务器
+
+   ```bash
+   pnpm i body-parser cors express-fileupload morgan lodash
+   ```
+
+   - [body-parser](https://www.npmjs.com/package/body-parser)  Node.js 请求正文解析中间件，它在您的处理程序之前解析传入的请求正文，并使其在req.body属性下可用。简而言之，它简化了传入请求。
+   - [cors](https://www.npmjs.com/package/cors)  另一个用于启用 CORS（跨域资源共享）请求的 Express 中间件。
+   - [express-fileupload](https://www.npmjs.com/package/express-fileupload)  用于上传文件的简单 Express 中间件。它解析multipart/form-data请求，提取文件（如果可用），并使它们在req.files属性下可用。
+   - [morgan](https://www.npmjs.com/package/morgan)  用于记录 HTTP 请求的 Node.js 中间件。
+   - [lodash](https://www.npmjs.com/package/lodash)  一个为数组、数字、对象、字符串等提供实用函数的 JavaScript 库。
