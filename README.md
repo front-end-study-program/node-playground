@@ -81,3 +81,15 @@ node js 相关知识练习操场
    body
       h1= message
    ```
+
+6. error handing
+   > 错误处理中间件函数的定义方式与其他中间件函数基本相同，差别在于错误处理函数有四个自变量而不是三个：(err, req, res, next)：例如：<br />
+   > 错误处理库：[http-errors](https://www.npmjs.com/package/http-errors)
+
+   ```js
+   app.use(function(err, req, res, next) {
+      console.error(err.stack);
+      res.status(500).send('Something broke!');
+   });
+
+   ```
