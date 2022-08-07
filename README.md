@@ -93,3 +93,10 @@ node js 相关知识练习操场
    });
 
    ```
+
+7. debugging
+    > Express 在内部使用调试模块来记录关于路由匹配、使用的中间件函数、应用程序模式以及请求/响应循环流程的信息
+
+   ```js
+   set DEBUG=express:* & node app.js
+   ```
