@@ -1,0 +1,41 @@
+{
+  "name": "@study-sea/npm-name",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "test": "vitest dev",
+    "test:watch": "vitest --watch",
+    "lint": "eslint --ext .ts,.js,.mjs,.cjs .",
+    "prepublish": "pnpm lint && vitest run --coverage",
+    "release": "pnpm prepublish && pnpm publish",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "眼圈发黑 <1449826851@qq.com>",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@study-sea/eslint-config-ts": "^0.0.4",
+    "@types/node": "^18.7.13",
+    "@vitest/coverage-c8": "^0.22.1",
+    "eslint": "^8.23.0",
+    "typescript": "^4.8.2",
+    "unbuild": "^0.8.9",
+    "vite": "^3.0.9",
+    "vitest": "^0.22.1"
+  }
+}
